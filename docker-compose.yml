@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  web:
+    build: .
+    container_name: web
+    image: web:latest
+    ports:
+      - 3000:3000
+    restart: always
+  postgres:
+    container_name: vt-postgres
+    image: postgres:latest
+    volumes:
+      - /dbs/postgres-vt:/var/lib/postgresql/data
+    ports:
+      - 5433:5432
+    env_file:
+      - common.env
+    restart: always
