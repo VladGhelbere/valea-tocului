@@ -1,6 +1,6 @@
-import Home from '../pages/Home';
-import Contact from '../pages/Contact';
-import About from '../pages/About';
+import Home from '../pages/Home/Home';
+import Contact from '../pages/Contact/Contact';
+import About from '../pages/About/About';
 
 const routes = [
     {

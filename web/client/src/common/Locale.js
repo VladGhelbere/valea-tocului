@@ -25,4 +25,52 @@ const networks = [
     },
 ];
 
-export { title, infoCards, networks }
+const persons = [
+    {
+        'image': 'person-vlad.jpg',
+        'description': 'Oenolog de aproximativ 2 ani, iubitor al vinului dintotdeauna.',
+        'name': 'Vlad G.',
+        'title': 'Fondator'
+    },
+    {
+        'image': 'person-ralu.jpg',
+        'description': 'Specialist PR & social media, iubitoare al vinului dulce',
+        'name': 'Raluca G.',
+        'title': 'Co-fondator'
+    },
+    {
+        'image': 'person-oana.jpg',
+        'description': "Una dintre persoanele din 'prima linie' care au ajutat la făurirea acestui vin",
+        'name': 'Oana S.',
+        'title': 'Asociată'
+    },
+];
+
+const sliders = [
+    {
+        img: 'home-1.jpg',
+        caption: 'Crescuți\ncu răbdare',
+        button: "Află mai multe",
+        button_url: "/about"
+    },
+    {
+        img: 'home-2.jpg',
+        caption: 'Adunați\ncu grijă',
+        button: "Comandă",
+        button_url: "/order"
+    },
+    {
+        img: 'home-3.jpg',
+        caption: 'Selecționati\ncu atenție',
+        button: "Află mai multe",
+        button_url: "/about"
+    },
+    {
+        img: 'home-4.jpg',
+        caption: 'Preparați\ncu pasiune',
+        button: "Comandă",
+        button_url: "/order"
+    },
+];
+
+export { title, infoCards, sliders, networks, persons }

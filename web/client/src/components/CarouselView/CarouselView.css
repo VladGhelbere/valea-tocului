@@ -1,0 +1,28 @@
+
+.slider-card{
+    display: flex; 
+    width: 50%;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #141313;
+}
+.slider-image-port{
+    width: 100%; 
+    background-size: cover; 
+    display: flex; 
+    justify-content: center;
+    align-items: center
+}
+
+.slider-image-land{
+    width: 50%;
+    background-size: cover
+}
+
+.slider-card p {
+    font-weight: 900;
+    font-size: 2.2rem;
+    text-align: center;
+}
