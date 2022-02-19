@@ -1,0 +1,84 @@
+footer{
+    width: 80%;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+
+.copyright{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-container{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.footer-card{
+    width: 250px;
+    margin-right: 20px;
+    text-align: left;
+}
+
+.footer-cards{
+    display: flex;
+    flex-direction: row;
+}
+
+@media only screen and (max-width: 725px) {
+    .footer-card{
+        width: 100%;
+        margin-left: 0px;
+        margin-right: 10px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        text-align: left;
+    }
+    .test{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .footer-container{
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        align-items: center;
+    }
+
+    footer{
+        width: 100%;
+        font-family: 'Poppins', Arial, Helvetica, sans-serif;
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 60px;
+    }
+    
+}
+
+.footer-title{
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.footer-description{
+    font-size: 11pt;
+    font-weight: lighter;
+    color: rgb(136, 136, 136);
+}
+
+.networks{
+    display: flex;
+    margin-top: 30px;
+}
+
+.network-card{
+    margin-right: 10px;
+}

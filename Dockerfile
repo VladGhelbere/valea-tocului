@@ -1,6 +1,5 @@
 FROM node:alpine
 COPY ./web /web
 WORKDIR /web
-RUN npm i
-RUN npm run client-install
+RUN npm run install-dep
 CMD ["npm", "run", "dev"]
