@@ -1,0 +1,44 @@
+.inputOrder{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 48%;
+}
+
+.inputOrder label {
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+
+.full-width{
+    width: 100%;
+}
+
+.inputOrder textarea {
+    resize: none;
+    height: 65px;
+    padding: 10px;
+    color: black;
+    font-size: 12pt;
+}
+
+.inputOrder input {
+    height: 30px;
+    padding: 10px;
+    font-size: 12pt;
+    color: black;
+}
+
+
+@media screen and (max-width: 800px) {
+    .inputOrder{
+        width: 100%;
+    }
+
+    .inputOrder input {
+        width: 95%;
+    }
+    .inputOrder textarea {
+        width: 95%;
+    }
+}

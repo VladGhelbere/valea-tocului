@@ -1,5 +1,5 @@
 import Home from '../pages/Home/Home';
-import Contact from '../pages/Contact/Contact';
+import Order from '../pages/Order/Order';
 import About from '../pages/About/About';
 
 const routes = [
@@ -15,8 +15,8 @@ const routes = [
     },
     {
         title: 'Comandă',
-        path: '/contact',
-        element: <Contact />
+        path: '/order',
+        element: <Order />
     }
 ];
 

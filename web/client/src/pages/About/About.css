@@ -18,6 +18,11 @@
     flex-wrap: nowrap;
 }
 
+.text-container p{
+    color: rgb(136, 136, 136);
+    line-height: 2rem;
+}
+
 .image-style{
     width: 480px;
     height: 85vh;
@@ -50,13 +55,5 @@ span{
     position: relative;
     line-height: 1;
     font-family: "Lovers Quarrel", cursive;
-}
-
-
-p{
-    margin: 0;
-    color: rgb(153, 153, 153);
-    font-size: 12pt;
-    line-height: 2;
 }
 
