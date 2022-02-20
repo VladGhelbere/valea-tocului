@@ -16,7 +16,10 @@
     "concurrently": "^3.5.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
+    "email-validator": "^2.0.4",
     "express": "^4.16.2",
-    "nodemailer": "^6.7.2"
+    "nodemailer": "^6.7.2",
+    "pg": "^8.7.3",
+    "validator": "^13.7.0"
   }
 }
