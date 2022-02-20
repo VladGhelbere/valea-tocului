@@ -32,7 +32,7 @@ async function sendMail(mailOptions){
 
 async function orderRegister(orderData) {
   const pool = new Pool(credentials);
-  const result = await pool.query(`INSERT INTO vt.orders (full_name, email, phone, "order") VALUES ('${orderData.name}', '${orderData.email}', '${orderData.phone}', '${orderData.order}')`);
+  const result = await pool.query(`INSERT INTO vt.orders (full_name, email, phone, order_content) VALUES ('${orderData.name}', '${orderData.email}', '${orderData.phone}', '${orderData.order}')`);
   await pool.end();
 
   return result;
@@ -40,7 +40,7 @@ async function orderRegister(orderData) {
 
 async function getProducts() {
   const pool = new Pool(credentials);
-  const products = await pool.query(`SELECT idx, "name", description, price, "path" FROM vt.products`);
+  const products = await pool.query(`SELECT idx, p_name, description, price, image FROM vt.products`);
   await pool.end();
 
   return products.rows;
