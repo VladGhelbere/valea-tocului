@@ -1,15 +1,16 @@
 
 
 import './About.css';
-import PersonsView from '../../components/PersonsView/PersonsView';
+import { about } from '../../common/Locale';
 
 export default function About() {
 
     return (
-        <div data-aos="fade-in">
-            <div style={{ height: 'calc(100vh - 100px)', width: '100%', backgroundColor: '#ff0000' }} >Slider</div>
-            <div data-aos='fade-down' className='teambg' style={{ backgroundImage: 'url("/team-bg.jpg")' }} id={'trigger-footer'} >
-                <PersonsView />
+        <div className='container' data-aos="fade-in">
+            <div style={{ backgroundImage: 'url(/about.jpg)' }} className='image-style'></div>
+            <div className='text-container'>
+                <span>{about.title}</span>
+                <p>{about.description}</p>
             </div>
         </div>
     )

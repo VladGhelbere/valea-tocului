@@ -73,4 +73,9 @@ const sliders = [
     },
 ];
 
-export { title, infoCards, sliders, networks, persons }
+const about = {
+    title: 'Despre "Valea Tocului"',
+    description: 'Valea Tocului este un proiect început de un grup de tineri din jud. Arad, Sat. Toc, care și-au găsit pasiunea în culegerea & selectarea strugurilor pentru crearea unui vin de casă natural. Satul Toc se află în comuna Săvârșin din județul Arad, la limita între regiunile istorice Banat și Crișana. Satul Toc este așezat pe Valea Tocului. Se învecinează la nord cu Troașul, la est cu Ilteul, la vest se află Cuiașul, iar la sud Mureșul. Înființat în anul 1715, până în prezent, satul nu a reușit să găzduiască mai mult de câteva sute de locuitori (<250). Datorită numărului mic de locuitori, lipsei unei industrii, și a separării terenurilor arabile de restul satului, acesta a rămas mereu protejat din punctul de vedere al poluării. Aproape la fiecare casă din sat se găsește o vie, fie ea departe în grădină sau împăienjenind intrarea în curte, viile din Toc sunt în cea mai mare parte îngrijite de către localnici, care nu prea au mult folos pentru cantitățile de struguri rodite toamna. Noi ne-am propus, să colaborăm cu producătorii locali, să-i ajutăm să-și îngrijească via, și să vă oferim vouă un vin curat, creat doar prin fermentație naturală, fără urme de sulf sau drojdii adăugate, de care să se poată bucura întreaga comunitate.'
+}
+
+export { title, infoCards, about, sliders, networks, persons }
