@@ -18,15 +18,15 @@ const credentials = {
   port: process.env.POSTGRES_PORT,
 };
 
-async function sendMail(mailOptions){
+async function sendMail(mailOptions) {
   let transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: process.env.GMAIL_EMAIL,
-        pass: process.env.GMAIL_PASS,
-      },
-    });
-    
+    service: 'gmail',
+    auth: {
+      user: process.env.GMAIL_EMAIL,
+      pass: process.env.GMAIL_PASS,
+    },
+  });
+
   return transporter.sendMail(mailOptions)
 }
 
@@ -46,7 +46,7 @@ async function getProducts() {
   return products.rows;
 }
 
-function getCustOptions(orderData){
+function getCustOptions(orderData) {
   return {
     from: process.env.GMAIL_EMAIL,
     to: orderData.email,
@@ -55,7 +55,7 @@ function getCustOptions(orderData){
   };
 }
 
-function getSelfOptions(orderData){
+function getSelfOptions(orderData) {
   return {
     from: process.env.GMAIL_EMAIL,
     to: process.env.GMAIL_EMAIL,
@@ -66,8 +66,8 @@ function getSelfOptions(orderData){
 
 app.post('/api/submitOrder', async (req, res) => {
   const orderData = req.body
-  if (!validator.validate(orderData.email)){
-    res.send({ 'status': 'error' , 'msg': 'Adresa de email este invalidă' });
+  if (!validator.validate(orderData.email)) {
+    res.send({ 'status': 'error', 'msg': 'Adresa de email este invalidă' });
     return
   }
 
@@ -79,7 +79,7 @@ app.post('/api/submitOrder', async (req, res) => {
     await sendMail(selfOptions);
   } catch (error) {
     console.log(error)
-    res.send({ 'status': 'error' , 'msg': 'Ceva nu a funcționat !\nTe rugăm, plasează comanda pe Instagram.' });
+    res.send({ 'status': 'error', 'msg': 'Ceva nu a funcționat !\nTe rugăm, plasează comanda pe Instagram.' });
     return
   }
 
@@ -87,7 +87,7 @@ app.post('/api/submitOrder', async (req, res) => {
     await orderRegister(orderData);
   } catch (error) {
     console.log(error)
-    res.send({ 'status': 'error' , 'msg': 'Comanda a fost plasată, însă nu am putut să o înregistrăm.' });
+    res.send({ 'status': 'error', 'msg': 'Comanda a fost plasată, însă nu am putut să o înregistrăm.' });
     return
   }
 
@@ -95,7 +95,8 @@ app.post('/api/submitOrder', async (req, res) => {
 });
 
 app.get('/products', async (req, res) => {
-  const products = await getProducts()
+  // const products = await getProducts()
+  const products = [{ "idx": 1, "name": "Vin Roșu Dulce", "description": "Un vin aromat, cu un gust natural intens de struguri și o dulceață aparte", "price": 20, "image": "images/sweet_red_wine.jpg" }];
   res.send(products);
 });
 
