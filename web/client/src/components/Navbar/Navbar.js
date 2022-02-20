@@ -11,6 +11,7 @@ import Collapse from "@mui/material/Collapse";
 import LinkButton from './LinkButton';
 import routes from '../../common/Routes';
 import { title } from '../../common/Locale';
+import { Link } from 'react-router-dom';
 
 export const Navbar = () => {
     const [navOpened, setNavOpened] = useState(false);
@@ -26,17 +27,15 @@ export const Navbar = () => {
     }, []);
 
     return (
-        <AppBar position="static">
-
+        <AppBar position="sticky">
             <Container>
                 <Toolbar style={{ height: 100 }}>
-
                     <Typography
                         variant="h4"
                         noWrap
                         component="div"
                         sx={{ mr: 2, display: { xs: 'none', md: 'flex' }, fontWeight: 900, fontSize: 22 }}>
-                        {title}
+                        <Link to={'/'} style={{ textDecoration: 'none' }}>{title}</Link>
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -56,11 +55,12 @@ export const Navbar = () => {
                         noWrap
                         component="div"
                         sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-                        {title}
+                        <Link to={'/'} style={{ textDecoration: 'none' }}>{title}</Link>
+
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
                         {
-                            routes.map((route, i) => <LinkButton title={route.title} to={route.path} key={i} />)
+                            routes.map((route, i) => <LinkButton onClose={() => setNavOpened(false)} title={route.title} to={route.path} key={i} />)
                         }
                     </Box>
 
@@ -69,7 +69,7 @@ export const Navbar = () => {
 
                 <Collapse in={navOpened} timeout={700}>
                     {
-                        routes.map((route, i) => <LinkButton title={route.title} to={route.path} key={i} />)
+                        routes.map((route, i) => <LinkButton onClose={() => setNavOpened(false)} title={route.title} to={route.path} key={i} />)
                     }
                 </Collapse>
             </Container>

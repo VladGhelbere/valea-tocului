@@ -5,5 +5,25 @@
 body {
   margin: 0;
   background-color: #141313;
+  scroll-behavior: smooth;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #141313; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(136, 136, 136);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #141313; 
+}

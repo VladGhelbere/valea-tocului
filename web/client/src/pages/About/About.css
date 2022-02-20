@@ -1,0 +1,59 @@
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.text-container{
+    width: calc(100% - 640px);
+    min-width: 200px;
+    padding-left: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap;
+}
+
+.text-container p{
+    color: rgb(136, 136, 136);
+    line-height: 2rem;
+}
+
+.image-style{
+    width: 480px;
+    height: 85vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; 
+}
+
+@media screen and (max-width: 900px) {
+    .image-style{
+        width: 60%;
+        height: 65vh;
+    }
+
+    .text-container{
+        width: 100%;
+        margin-top: 80px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+
+
+span{
+    font-weight: normal;
+    font-size: 50px;
+    display: block;
+    color: rgb(246, 121, 121);
+    position: relative;
+    line-height: 1;
+    font-family: "Lovers Quarrel", cursive;
+}
+

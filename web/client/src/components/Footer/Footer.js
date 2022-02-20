@@ -1,11 +1,12 @@
 import './Footer.css'
 import FooterCard from './FooterCard';
-
+import { title } from '../../common/Locale';
 import { infoCards, networks } from '../../common/Locale';
 
 const Footer = () => {
+  const year = new Date().getFullYear();
   return (
-    <footer>
+    <footer data-aos="fade-in" data-aos-anchor="#trigger-footer" data-aos-anchor-placement="top-center" >
       <div className='footer-container'>
         <div className='footer-cards'>
           {
@@ -26,7 +27,7 @@ const Footer = () => {
 
 
       <div className='copyright'>
-        Copyright © 2022 All rights reserved | Valea Tocului
+        Copyright © {year} All rights reserved | {title}
       </div>
     </footer>
   )

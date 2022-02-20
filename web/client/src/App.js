@@ -1,3 +1,6 @@
+import React, { useEffect } from 'react'
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 import './App.css';
 import { Navbar } from './components/Navbar/Navbar';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
@@ -17,6 +20,12 @@ const darkTheme = createTheme({
 });
 
 function App() {
+  useEffect(() => {
+    Aos.init({
+      duration: 1000,
+      easing: 'slide'
+    });
+  }, []);
   return (
     <ThemeProvider theme={darkTheme}>
       <Router>
