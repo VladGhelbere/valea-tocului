@@ -10,8 +10,6 @@ console.log('Starting the server');
 app.use(express.static(path.join(__dirname, 'client', 'build')))
 app.use(express.json());
 
-// TODO add api route to get the products from db
-
 const credentials = {
   user: process.env.POSTGRES_USER,
   host: process.env.POSTGRES_HOST,
@@ -34,10 +32,36 @@ async function sendMail(mailOptions){
 
 async function orderRegister(orderData) {
   const pool = new Pool(credentials);
-  const now = await pool.query(`INSERT INTO vt.orders (full_name, email, phone, "order") VALUES ('${orderData.name}', '${orderData.email}', '${orderData.phone}', '${orderData.order}')`);
+  const result = await pool.query(`INSERT INTO vt.orders (full_name, email, phone, "order") VALUES ('${orderData.name}', '${orderData.email}', '${orderData.phone}', '${orderData.order}')`);
   await pool.end();
 
-  return now;
+  return result;
+}
+
+async function getProducts() {
+  const pool = new Pool(credentials);
+  const products = await pool.query(`SELECT idx, "name", description, price, "path" FROM vt.products`);
+  await pool.end();
+
+  return products.rows;
+}
+
+function getCustOptions(orderData){
+  return {
+    from: process.env.GMAIL_EMAIL,
+    to: orderData.email,
+    subject: 'Valea Tocului - Am primit comanda ta',
+    text: `Dragă ${orderData.name} ! \nMulțumim pentru comandă ! \nVeți fi contactat(ă) in curând pentru confirmare ! \nComanda: ${orderData.order}`
+  };
+}
+
+function getSelfOptions(orderData){
+  return {
+    from: process.env.GMAIL_EMAIL,
+    to: process.env.GMAIL_EMAIL,
+    subject: 'Valea Tocului - Comandă nouă',
+    text: `Aveți o comandă nouă:\n Nume: ${orderData.name} \n Email: ${orderData.email} \n Telefon: ${orderData.phone} \n Adresă: ${orderData.address} \n Comandă: ${orderData.order}`
+  };
 }
 
 app.post('/api/submitOrder', async (req, res) => {
@@ -47,19 +71,8 @@ app.post('/api/submitOrder', async (req, res) => {
     return
   }
 
-  const custOptions = {
-    from: process.env.GMAIL_EMAIL,
-    to: orderData.email,
-    subject: 'Valea Tocului - Am primit comanda ta',
-    text: `Dragă ${orderData.name} ! \nMulțumim pentru comandă ! \nVeți fi contactat(ă) in curând pentru confirmare ! \nComanda: ${orderData.order}`
-  };
-
-  const selfOptions = {
-    from: process.env.GMAIL_EMAIL,
-    to: process.env.GMAIL_EMAIL,
-    subject: 'Valea Tocului - Comandă nouă',
-    text: `Aveți o comandă nouă:\n Nume: ${orderData.name} \n Email: ${orderData.email} \n Telefon: ${orderData.phone} \n Adresă: ${orderData.address} \n Comandă: ${orderData.order}`
-  };
+  const custOptions = getCustOptions(orderData)
+  const selfOptions = getSelfOptions(orderData)
 
   try {
     await sendMail(custOptions);
@@ -79,6 +92,11 @@ app.post('/api/submitOrder', async (req, res) => {
   }
 
   res.send({ 'status': 'successful' });
+});
+
+app.get('/products', async (req, res) => {
+  const products = await getProducts()
+  res.send(products);
 });
 
 app.get('/cdn/*', (req, res) => {
