@@ -1,9 +1,28 @@
 
 
+import { useState } from 'react';
 import InputOrder from './InputOrder/InputOrder';
 import './Order.css';
 
 export default function Order() {
+    const [name, setName] = useState('hardcodedName');
+    const [email, setEmail] = useState('hardcodedEmail');
+    const [phone, setPhone] = useState('076882542');
+    const [address, setAddress] = useState('asdasdsa');
+    const [order, setOrder] = useState('1 vin');
+
+    const placeOrder = () => {
+        var request = { name, email, phone, address, order };
+        fetch('/api/submitOrder', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(request)
+        }).then(e => e.json()).then(e => {
+            console.log(e)
+        })
+    }
 
     return (
         <>
@@ -37,7 +56,7 @@ export default function Order() {
                                 <div className='rowCol'>
                                     <InputOrder textArea={true} title={'Ce vin(uri) ați dori ?'} placeholder={'Eg. 1 vin alb sec, 2 sticle rosu dulce'} />
                                 </div>
-                                <a href={'/'} className='btn orderBtn'>Comandă</a>
+                                <a className='btn orderBtn' onClick={placeOrder}>Comandă</a>
                             </div>
                         </div>
                     </div>
