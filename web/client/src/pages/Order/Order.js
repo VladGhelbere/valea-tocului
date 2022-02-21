@@ -49,7 +49,7 @@ export default function Order() {
 
     return (
         <>
-            <div style={{ backgroundImage: 'url(/order.jpg)' }} className='orderbg' > </div>
+            <div style={{ backgroundImage: 'url(/hero-header.jpg)' }} className='orderbg' > </div>
 
             <div className='wrapper' data-aos='fade-down' data-aos-anchor-placement="top-center">
                 <div className='order-container' data-aos="fade-in">
@@ -82,7 +82,7 @@ export default function Order() {
                                     </div>
 
                                     <div className='rowCol'>
-                                        <InputOrder textArea={true} title={'Ce vin(uri) ați dori ?'} placeholder={'Eg. 1 vin alb sec, 2 sticle rosu dulce'} onInput={e => { setOrder(e) }} />
+                                        <InputOrder textArea={true} title={'Ce vin(uri) ați dori ?'} placeholder={'Eg. 2 sticle roșu dulce'} onInput={e => { setOrder(e) }} />
                                     </div>
 
                                     <button type='submit' className='btn orderBtn'>Comandă</button>
