@@ -9,8 +9,6 @@ services:
       - 3000:3000
     networks:
       - frontend
-    volumes:
-      - /certs:/certs
     restart: always
   postgres:
     container_name: vt-postgres
@@ -33,12 +31,19 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - /certs:/certs
+      - ./certs:/certs
       - /home/pi/github/valea-tocului/express.conf:/etc/nginx/conf.d/default.conf
-      - /home/pi/github/valea-tocului/ssl:/ssl/
     networks:
       - frontend
       - backend
+  certbot:
+    image: certbot/dns-digitalocean:arm32v6-latest
+    container_name: certbot
+    hostname: certbot
+    entrypoint: ["certbot", "certonly", "--config=/certbot/certbot.ini"] # --staging for testing
+    volumes:
+      - ./certbot:/certbot
+      - ./certs:/etc/letsencrypt
 
 networks:
   frontend:
