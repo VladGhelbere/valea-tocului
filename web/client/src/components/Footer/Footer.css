@@ -3,7 +3,8 @@ footer{
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
     text-align: center;
     margin: 0 auto;
-    margin-top: 60px;
+    padding-top: 60px;
+    background-color: #141313;
 }
 
 .copyright{
@@ -39,10 +40,6 @@ footer{
         margin-bottom: 20px;
         text-align: left;
     }
-    .test{
-        display: flex;
-        flex-direction: column;
-    }
     
     .footer-container{
         width: 90%;
@@ -57,7 +54,6 @@ footer{
         font-family: 'Poppins', Arial, Helvetica, sans-serif;
         text-align: center;
         margin: 0 auto;
-        margin-top: 60px;
     }
     
 }

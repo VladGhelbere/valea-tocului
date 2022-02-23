@@ -95,8 +95,7 @@ app.post('/api/submitOrder', async (req, res) => {
 });
 
 app.get('/products', async (req, res) => {
-  // const products = await getProducts()
-  const products = [{ "idx": 1, "name": "Vin Roșu Dulce", "description": "Un vin aromat, cu un gust natural intens de struguri și o dulceață aparte", "price": 20, "image": "images/sweet_red_wine.jpg" }];
+  const products = await getProducts()
   res.send(products);
 });
 

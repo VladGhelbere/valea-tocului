@@ -13,7 +13,14 @@ export default function Product({ title, description, price, image, currency }) 
                     {description}
                 </div>
             </div>
-            <p className='price black'>{price}{currency}</p>
+            <div className='price-cont'>
+
+                <p className='price black'>{price} </p>
+                <p className='price black'>{currency}</p>
+            </div>
+
+
+
         </div>
     )
 }

@@ -51,8 +51,8 @@ export default function Order() {
         <>
             <div style={{ backgroundImage: 'url(/hero-header.jpg)' }} className='orderbg' > </div>
 
-            <div className='wrapper' data-aos='fade-down' data-aos-anchor-placement="top-center">
-                <div className='order-container' data-aos="fade-in">
+            <div className='wrapper'>
+                <div className='order-container' data-aos="fade-down">
                     <span id='order-title'>Vinurile noastre</span>
                     <div className='place-order-wrapper'>
                         <div className='itemsContainer'>
