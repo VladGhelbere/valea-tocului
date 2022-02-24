@@ -14,8 +14,7 @@ export default function Product({ title, description, price, image, currency }) 
                 </div>
             </div>
             <div className='price-cont'>
-
-                <p className='price black'>{price} </p>
+                <p className='price black'>{price}</p>
                 <p className='price black'>{currency}</p>
             </div>
 

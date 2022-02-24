@@ -59,7 +59,7 @@ export default function Order() {
                             {
                                 products.map((product, i) => <Product key={i} image={`${window.location.origin}/cdn/${product.image}`} title={product.name} description={product.description} price={product.price} currency={'lei'} />)
                             }
-                            <Product image={'/soon2.png'} title={'More coming soon!'} description={''} price={''} currency={''} />
+                            <Product image={'/soon2.png'} title={'Mai multe produse vor fi disponibile curând'} description={''} price={''} currency={''} />
                         </div>
 
 
@@ -69,7 +69,7 @@ export default function Order() {
                                 <div className='place-order-form'>
                                     <span>Comandă o sticlă</span>
 
-                                    <p id='subtitle'>Plasează comanda mai jos și o să vă contactăm pentru confirmare</p>
+                                    <p id='subtitle'>Plasați comanda mai jos și vă vom contacta pentru confirmare !</p>
 
                                     <div className='rowCol'>
                                         <InputOrder title={'Nume complet'} placeholder={'Nume Prenume'} onInput={e => { setName(e) }} />
