@@ -11,12 +11,12 @@ services:
       - frontend
     restart: always
   postgres:
-    container_name: vt-postgres
+    container_name: postgres
     image: postgres:latest
     volumes:
-      - /dbs/postgres-vt:/var/lib/postgresql/data
+      - ./postgres-data:/var/lib/postgresql/data
     ports:
-      - 5433:5432
+      - 5432:5432
     env_file:
       - common.env
     networks:
