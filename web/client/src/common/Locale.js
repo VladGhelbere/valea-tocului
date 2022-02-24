@@ -1,5 +1,8 @@
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import EmailIcon from '@mui/icons-material/Email';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 const title = 'Valea Tocului';
 
@@ -9,8 +12,8 @@ const infoCards = [
         description: 'Dacă vrei să ne urmarești progresul, sau pur si simplu îți place vinul natural, urmărește-ne pe una din rețelele de socializare de mai jos !'
     },
     {
-        title: 'Locație',
-        description: 'Țara: România\nLocația: Toc, Arad, 317277\nLivrare personală în: Arad, Timișoara'
+        title: 'Livrare',
+        description: 'Livrare personală în: Arad, Timișoara. În afara acestor orașe se percepe o taxă suplimentară de livrare.'
     }
 ];
 
@@ -23,6 +26,18 @@ const networks = [
         'url': 'https://www.instagram.com/valeatocului/',
         'icon': <InstagramIcon style={{ fontSize: 'xxx-large' }} />
     },
+    {
+        'url': 'tel:+40732819631',
+        'icon': <WhatsAppIcon style={{ fontSize: 'xxx-large' }} />
+    },
+    {
+        'url': 'mailto:tocwine@gmail.com',
+        'icon': <EmailIcon style={{ fontSize: 'xxx-large' }} />
+    },
+    {
+        'url': 'https://www.google.com/maps/place/Toc/@46.0163342,22.29995,14z/data=!3m1!4b1!4m5!3m4!1s0x474f101d4ef5b2e1:0x37c84f1bb90a8eee!8m2!3d46.0063961!4d22.3193622',
+        'icon': <LocationOnIcon style={{ fontSize: 'xxx-large' }} />
+    },
 ];
 
 const persons = [
@@ -34,34 +49,40 @@ const persons = [
     },
     {
         'image': 'person-ralu.jpg',
-        'description': 'Specialist PR & social media, iubitoare al vinului dulce',
+        'description': 'Specialist PR & social media, iubitoare al vinului dulce.',
         'name': 'Raluca G.',
         'title': 'Co-fondator'
     },
     {
         'image': 'person-oana.jpg',
-        'description': "Una dintre persoanele din 'prima linie' care au ajutat la făurirea acestui vin",
+        'description': "Una dintre persoanele din 'prima linie' care au ajutat la făurirea acestui vin.",
         'name': 'Oana S.',
-        'title': 'Asociată'
+        'title': 'Student'
     },
+    {
+        'image': 'person-romeo.jpg',
+        'description': "Persoana responsabilă de minunățiile de imagini ale produselor noastre.",
+        'name': 'Romeo B.',
+        'title': 'Fotograf'
+    }
 ];
 
 const sliders = [
     {
         img: 'home-1.jpg',
-        caption: 'Vin\ncu adevărat dulce',
+        caption: 'Vin cu adevărat dulce',
         button: "Comandă",
         button_url: "/order"
     },
     {
         img: 'home-2.jpg',
-        caption: 'Struguri adunați\ncu grijă',
+        caption: 'Din struguri adunați cu grijă',
         button: "Află mai multe",
         button_url: "/about"
     },
     {
         img: 'home-3.jpg',
-        caption: 'Preparați\ncu pasiune',
+        caption: 'Și preparați cu pasiune',
         button: "Comandă",
         button_url: "/order"
     },
