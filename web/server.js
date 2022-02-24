@@ -32,7 +32,7 @@ async function sendMail(mailOptions) {
 
 async function orderRegister(orderData) {
   const pool = new Pool(credentials);
-  const result = await pool.query(`INSERT INTO vt.orders (full_name, email, phone, order_content) VALUES ('${orderData.name}', '${orderData.email}', '${orderData.phone}', '${orderData.order}')`);
+  const result = await pool.query(`INSERT INTO vt.orders (full_name, email, phone, address, order_content) VALUES ('${orderData.name}', '${orderData.email}', '${orderData.phone}', '${orderData.address}', '${orderData.order}')`);
   await pool.end();
 
   return result;

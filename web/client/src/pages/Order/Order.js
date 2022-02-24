@@ -57,7 +57,7 @@ export default function Order() {
                     <div className='place-order-wrapper'>
                         <div className='itemsContainer'>
                             {
-                                products.map((product, i) => <Product key={i} image={`${window.location.origin}/cdn/${product.image}`} title={product.name} description={product.description} price={product.price} currency={'lei'} />)
+                                products.map((product, i) => <Product key={i} image={`${window.location.origin}/cdn/${product.image}`} title={product.p_name} description={product.description} price={product.price} currency={'lei'} />)
                             }
                             <Product image={'/soon2.png'} title={'Mai multe produse vor fi disponibile curând'} description={''} price={''} currency={''} />
                         </div>
