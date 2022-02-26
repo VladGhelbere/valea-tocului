@@ -23,6 +23,16 @@
     border-radius: 100%;
     filter: drop-shadow(5px 4px 5px rgba(0,0,0,0.5));
     background-position: center center;
+    cursor: pointer;
+}
+
+.product-modal{
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: drop-shadow(5px 4px 5px rgba(0,0,0,0.5));
+    background-position: center center; 
+    width: 280px;
+    height: 400px;
 }
 
 .black{
@@ -36,12 +46,18 @@
 .product-description{
     color: rgb(136, 136, 136);
     font-weight: lighter;
-    font-size: 11pt;
+    font-size: 12pt;
 }
 
 .price{
     font-size: 16pt;
-    margin: 0;
+    margin: 3px;
+}
+
+.curency{
+    font-size: 16pt;
+    margin: 0px 0px 0px 2px;
+    margin-left: 2px;
 }
 
 .price-cont{
@@ -59,6 +75,11 @@
     }
 
     .price{
+        font-size: 14pt;
+        margin: 0px;
+    }
+
+    .curency{
         font-size: 14pt;
     }
 

@@ -2,6 +2,7 @@ import './Footer.css'
 import FooterCard from './FooterCard';
 import { title } from '../../common/Locale';
 import { infoCards, networks } from '../../common/Locale';
+import ScrollLink from '../ScrollLink/ScrollLink';
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -16,9 +17,7 @@ const Footer = () => {
         <div className='networks'>
           {
             networks.map((network, i) => {
-              return <a href={network.url} className='network-card' key={i}>
-                {network.icon}
-              </a>
+              return <a target="_blank" rel="noopener noreferrer" href={network.url} className='network-card' key={i}>{network.icon}</a>
             })
           }
         </div>
@@ -27,7 +26,7 @@ const Footer = () => {
 
 
       <div className='copyright'>
-        Copyright © {year} All rights reserved | {title}
+        Copyright © {year} All rights reserved | <ScrollLink to={'/'}>{title}</ScrollLink>
       </div>
     </footer>
   )

@@ -8,12 +8,12 @@ import CarouselView from '../../components/CarouselView/CarouselView';
 export default function Home() {
 
     return (
-        <div data-aos="fade-in">
+        <>
             <CarouselView />
 
             <div data-aos='fade-down' className='teambg' style={{ backgroundImage: 'url("/team-bg.jpg")' }} id={'trigger-footer'} >
                 <PersonsView />
             </div>
-        </div >
+        </>
     )
 } 

@@ -7,8 +7,7 @@ import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Zoom } from "swiper";
 import { sliders } from '../../common/Locale';
-import { Link } from 'react-router-dom';
-
+import ScrollLink from '../ScrollLink/ScrollLink';
 
 export default function CarouselView() {
     const [isPortrait, setIsPortrait] = useState(window.innerWidth < 900);
@@ -42,7 +41,7 @@ export default function CarouselView() {
                                 !isPortrait &&
                                 <div className='slider-card' >
                                     <p> {slider.caption} </p>
-                                    <Link to={slider.button_url} className='btn'>{slider.button}</Link>
+                                    <ScrollLink to={slider.button_url} className='btn'>{slider.button}</ScrollLink>
                                 </div>
                             }
                             <div className={isPortrait ? 'slider-image-port' : 'slider-image-land'} style={{ backgroundImage: `url(/${slider.img})` }}>
@@ -52,7 +51,7 @@ export default function CarouselView() {
                                         <p> {slider.caption} </p>
                                         {
                                             slider.button &&
-                                            <Link to={slider.button_url} className='btn'>{slider.button}</Link>
+                                            <ScrollLink to={slider.button_url} className='btn'>{slider.button}</ScrollLink>
                                         }
                                     </div>
                                 }

@@ -9,6 +9,7 @@ import Footer from './components/Footer/Footer';
 import routes from './common/Routes';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import GenericPage from './components/GenericPage/GenericPage';
 
 const darkTheme = createTheme({
   palette: {
@@ -45,7 +46,7 @@ function App() {
           <Navbar />
           <Routes>
             {
-              routes.map((route, i) => <Route path={route.path} element={route.element} key={i} />)
+              routes.map((route, i) => <Route path={route.path} element={<GenericPage>{route.element}</GenericPage>} key={i} />)
             }
           </Routes>
           <Footer />
