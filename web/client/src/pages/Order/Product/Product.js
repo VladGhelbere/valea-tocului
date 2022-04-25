@@ -14,25 +14,40 @@ const style = {
     bgcolor: '#ffffff',
     boxShadow: 24,
     p: 4,
+    width: 280,
+    display: 'flex',
+    flexDirection: 'column',
+    alignContent: 'center',
+    alignItems: 'center',
+    justifyContent: 'center'
 };
 
-export default function Product({ title, description, price, image, currency }) {
+export default function Product({ title, description, price, image, currency, dontOpenModal }) {
     const [open, setOpen] = useState(false);
-
     return (
         <div className='productCont'>
-            <div className='product' style={{ backgroundImage: `url(${image})` }} onClick={() => setOpen(true)}></div>
+            <div className='product' style={{ backgroundImage: `url(${image})`, cursor: dontOpenModal ? 'default' : 'pointer' }} onClick={() => {
+                if (!dontOpenModal)
+                    setOpen(true)
+            }}></div>
             <Modal
                 open={open}
-                onClose={() => setOpen(false)}
+                onClose={() => {
+                    if (!dontOpenModal)
+                        setOpen(false)
+                }}
                 closeAfterTransition
                 BackdropComponent={Backdrop}
                 BackdropProps={{
                     timeout: 500,
                 }}>
                 <Fade in={open}>
-                    <Box sx={style}>
+                    <Box sx={style} onClick={() => {
+                        if (!dontOpenModal)
+                            setOpen(false)
+                    }}>
                         <div className='product-modal' style={{ backgroundImage: `url(${image})` }} ></div>
+                        <p style={{ color: 'black' }}>{description}{description}{description}</p>
                     </Box>
                 </Fade>
             </Modal>
