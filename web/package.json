@@ -1,13 +1,13 @@
 {
   "name": "valea-tocului",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "main": "server.js",
   "scripts": {
     "install-dep": "npm install && cd client && npm install && cd ../",
     "client": "cd client && npm run start",
     "start": "cd client && npm run build && cd ../ && nodemon server.js"
   },
-  "author": "Brad Traversy",
+  "author": "limiteddata",
   "license": "MIT",
   "devDependencies": {
     "nodemon": "^1.14.6"

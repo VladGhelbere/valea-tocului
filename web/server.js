@@ -8,6 +8,7 @@ const validator = require("email-validator");
 console.log('Starting the server');
 
 app.use(express.static(path.join(__dirname, 'client', 'build')))
+app.use('/cdn', express.static(path.join(__dirname, 'static')))
 app.use(express.json());
 
 const credentials = {
@@ -32,7 +33,8 @@ async function sendMail(mailOptions) {
 
 async function orderRegister(orderData) {
   const pool = new Pool(credentials);
-  const result = await pool.query(`INSERT INTO vt.orders (full_name, email, phone, address, order_content) VALUES ('${orderData.name}', '${orderData.email}', '${orderData.phone}', '${orderData.address}', '${orderData.order}')`);
+  const result = await pool.query(`INSERT INTO vt.orders (full_name, email, phone, address, order_content) VALUES ($1, $2, $3, $4, $5)`,
+    [orderData.name, orderData.email, orderData.phone, orderData.address, orderData.order]);
   await pool.end();
 
   return result;
@@ -97,10 +99,6 @@ app.post('/api/submitOrder', async (req, res) => {
 app.get('/products', async (req, res) => {
   const products = await getProducts()
   res.send(products);
-});
-
-app.get('/cdn/*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'static', req.originalUrl.split("/cdn/")[1]));
 });
 
 app.get('/*', (req, res) => {
