@@ -47,7 +47,7 @@ export default function Product({ title, description, price, image, currency, do
                             setOpen(false)
                     }}>
                         <div className='product-modal' style={{ backgroundImage: `url(${image})` }} ></div>
-                        <p style={{ color: 'black' }}>{description}{description}{description}</p>
+                        <p style={{ color: 'black' }}>{description}</p>
                     </Box>
                 </Fade>
             </Modal>
